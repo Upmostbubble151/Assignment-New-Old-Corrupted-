@@ -67,9 +67,22 @@ def home_page(frame):
             pass_entry.config(fg="black", show="*")
     pass_entry.bind("<FocusIn>", clear_placeholder_pass)
     #Login Button
-    login_button = tk.Button(frame, text="Login", font=("Arial", 16, "bold"), bg="black", fg="black", bd=0, highlightthickness=0, relief="flat")
+    login_button = tk.Button(frame, text="Login", font=("Arial", 16, "bold"), bg="black", fg="black", bd=0, highlightthickness=0, relief="flat", command=lambda: page_switch(main_menu))  # Switch to main menu 
     login_button.place(x=150, y=770)
 
+def main_menu(frame):
+    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Quizzlet Main Menu.png") #Import the Background for The home page
+    image = image.resize((430, 932)) # Resize the image to be correct
+
+    bg_image = ImageTk.PhotoImage(image) # Store the Image
+    
+    
+    bg_label = tk.Label(frame, image=bg_image)
+
+    canvas = tk.Canvas(frame, width=430, height=932, bd=0, highlightthickness=0)
+    canvas.pack(fill="both", expand=True)
+    canvas.bg_image = bg_image  
+    canvas.create_image(0, 0, image=bg_image, anchor="nw")
 
 
 page_switch(home_page)  # Display the home page initially
