@@ -25,7 +25,7 @@ def page_switch (page_function): #Defines Variable that changes to the different
     page_function(current_page) #displays the new page
 
 def home_page(frame):
-    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Quizzlet Login 1.png") #Import the Background for The home page
+    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Login Page Quizzlet.png") #Import the Background for The home page
     image = image.resize((430, 932)) # Resize the image to be correct
 
     bg_image = ImageTk.PhotoImage(image) # Store the Image
@@ -41,7 +41,7 @@ def home_page(frame):
     #Widget 
     user_entry = tk.Entry(frame, width=30, bd=0, highlightthickness=0, relief = "flat", bg="white", font=("Arial", 16))
     user_entry.insert(0, "Enter your username")  # Placeholder text
-    user_entry.place(x=80, y=540)
+    user_entry.place(x=70, y=518)
     def clear_placeholder(event): #Username Prompt
         if user_entry.get() == "Enter your username":
             user_entry.delete(0, tk.END)
@@ -59,7 +59,7 @@ def home_page(frame):
     #Password
     pass_entry = tk.Entry(frame, width=30, bd=0, highlightthickness=0, relief = "flat", bg="white", font=("Arial", 16), show="*")
     pass_entry.insert(0, "Enter your password")  # Placeholder text
-    pass_entry.place(x=75, y=660)
+    pass_entry.place(x=73, y=643)
     #Password Prompt
     def clear_placeholder_pass(event): 
         if pass_entry.get() == "Enter your password":
@@ -71,7 +71,7 @@ def home_page(frame):
     login_button.place(x=150, y=770)
 
 def main_menu(frame):
-    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu Quizzlet #1.png") #Import the Background for The home page
+    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu 1.png") #Import the Background for The home page
     image = image.resize((430, 932)) # Resize the image to be correct
 
     bg_image = ImageTk.PhotoImage(image) # Store the Image
@@ -81,9 +81,13 @@ def main_menu(frame):
     canvas.pack(fill="both", expand=True)
     canvas.bg_image = bg_image  
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
+    
+    next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#6b63fe", relief="flat", command=lambda: page_switch(main_menu1))  # Switch to lesson 2
+    next_button.place(x=350, y=475)
+    
 
 def main_menu1(frame):
-    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/MainMenu_1.png")
+    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu 2 Quizzlet.png")
     image = image.resize((430,932)) #Resizes Image
 
     bg_image = ImageTk.PhotoImage(image)
@@ -94,6 +98,8 @@ def main_menu1(frame):
     canvas.bg_image = bg_image  
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
     
+
+
 
 page_switch(home_page)  # Display the home page initially
 root.mainloop()
