@@ -1,3 +1,6 @@
+import sys
+print(sys.executable)
+
 #Intialise Windows
 from tkinter import *
 import tkinter as tk
@@ -14,7 +17,7 @@ root.resizable(False, False)
 
 #Switching Pages
 current_page = None #Acts as a changable variable which is us
-
+#adding mback button
 def page_switch (page_function): #Defines Variable that changes to the different Pages. page_function is the page you want to switch
     global current_page #Changes variable outside the def
     if current_page is not None:
@@ -82,7 +85,7 @@ def main_menu(frame):
     canvas.bg_image = bg_image  
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
     
-    next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#6b63fe", relief="flat", command=lambda: page_switch(main_menu1))  # Switch to lesson 2
+    next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#6b63fe", relief="flat", command=lambda: page_switch(main_menu1))  
     next_button.place(x=350, y=475)
     
 
@@ -97,6 +100,11 @@ def main_menu1(frame):
     canvas.pack(fill="both", expand=True)
     canvas.bg_image = bg_image  
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
+
+    back_button = tk.Button(frame, text="<", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: page_switch(main_menu))
+    back_button.place(x=20, y=475)
+
+    
     
 
 
