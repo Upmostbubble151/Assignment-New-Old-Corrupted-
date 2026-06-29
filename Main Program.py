@@ -110,6 +110,22 @@ class QuizApp:
             back_button = tk.Button(frame, text="<", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: self.page_switch(self.main_menu))
             back_button.place(x=20, y=475)
 
+            next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: self.page_switch(self.lecture1_Q1))
+            next_button.place(x=350, y=475)
+    def lecture1_Q1(self, frame):
+            image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture 1 - Question 1.png")
+            image = image.resize((430, 932)) # Resize the image to be correct
+
+            bg_image = ImageTk.PhotoImage(image) # Store the Image
+            bg_label = tk.Label(frame, image=bg_image)
+
+            #Creates Canvas to display the background image
+            canvas = tk.Canvas(frame, width=430, height=932, bd=0, highlightthickness=0)
+            canvas.pack(fill="both", expand=True)
+            canvas.bg_image = bg_image
+            canvas.create_image(0, 0, image=bg_image, anchor="nw")
+
+            
         
 
     def main_menu1(self,frame):
