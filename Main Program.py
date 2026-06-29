@@ -1,10 +1,10 @@
-import sys
-print(sys.executable)
+
 
 #Intialise Windows
 from tkinter import *
 import tkinter as tk
 from PIL import Image, ImageTk
+import webbrowser #Video
 
 root = Tk()
 root.title("Quizzlet")
@@ -91,19 +91,27 @@ def main_menu(frame):
     next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#6b63fe", relief="flat", command=lambda: page_switch(main_menu1))  
     next_button.place(x=350, y=475)
     
-#Lecture 1  Video
+ 
 
 def lecture1_video(frame):
-    image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lesson 1 - Video.png") #Import the Background for The home page
+    image = Image.open("//Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lesson 1 - Video.png") #Import the Background for The home page
     image = image.resize((430, 932)) # Resize the image to be correct
 
     bg_image = ImageTk.PhotoImage(image) # Store the Image
     bg_label = tk.Label(frame, image=bg_image)
     
+
     canvas = tk.Canvas(frame, width=430, height=932, bd=0, highlightthickness=0)
     canvas.pack(fill="both", expand=True)
     canvas.bg_image = bg_image  
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
+
+    play_button = tk.Button(frame, text="Play Video", font=("Arial", 16, "bold"), command=lambda: webbrowser.open("https://www.youtube.com/watch?v=lWcIhIyKeog"))
+    play_button.place(x=160, y=495)
+    back_button = tk.Button(frame, text="<", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: page_switch(main_menu))
+    back_button.place(x=20, y=475)
+
+    
 
 def main_menu1(frame):
     image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu 2 Quizzlet.png")
