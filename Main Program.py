@@ -16,7 +16,7 @@ class QuizApp:
         #Switching Pages
         self.current_page = None #Acts as a changable variable which is us
         self.page_switch(self.home_page)  # Display the home page initially
-        self.score = 0 #Intialise the Score to be counted
+        self.score = 0 #Intialise the Score to be counted 
     #Page Switch
     def page_switch (self, page_function): #Defines Variable that changes to the different Pages. page_function is the page you want to switch
         if self.current_page is not None:
@@ -568,6 +568,8 @@ class QuizApp:
         message_label = tk.Label(frame, text=message, font=("Arial", 20, "bold"), bg="white", fg="black")
         message_label.place(x=110, y=600)
 
+        next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: self.page_switch(self.main_menu))
+        next_button.place(x=350, y=475)
     def main_menu1(self,frame):
         image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu 2 Quizzlet.png")
         image = image.resize((430,932)) #Resizes Image
