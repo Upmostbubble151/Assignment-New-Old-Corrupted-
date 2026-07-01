@@ -71,6 +71,10 @@ class QuizApp:
         #Login Button
         login_button = tk.Button(frame, text="Login", font=("Arial", 16, "bold"), bg="black", fg="black", bd=0, highlightthickness=0, relief="flat", command=lambda: self.page_switch(self.main_menu))  # Switch to main menu 
         login_button.place(x=180, y=760)
+        #Quit Button
+        quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+        quit_button.place(x=100, y=800)
+                    
 
     def main_menu(self,frame):
         image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Main Menu 1.png") #Import the Background for The home page
@@ -89,6 +93,10 @@ class QuizApp:
         
         next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#6b63fe", relief="flat", command=lambda: self.page_switch(self.main_menu1))  
         next_button.place(x=350, y=475)
+        #Quit Button
+        quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+        quit_button.place(x=100, y=800)
+                    
         
     
 
@@ -144,6 +152,8 @@ class QuizApp:
             #Submit Button
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=50, y=800)
                     
 
     def lecture1_Q1_Correct(self, frame):
@@ -161,6 +171,8 @@ class QuizApp:
 
             next_button = tk.Button(frame, text=">", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: self.page_switch(self.lecture1_Q2))
             next_button.place(x=350, y=475)
+
+         
     
     def lecture1_Q1_Incorrect(self, frame):
             image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q1_Incorrect.png")
@@ -207,6 +219,9 @@ class QuizApp:
                             self.page_switch(self.lecture1_Q2_Incorrect)
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=100, y=800)
+                    
     
     def lecture1_Q2_Correct(self, frame):
             image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q2_Correct.png")
@@ -268,6 +283,9 @@ class QuizApp:
                             self.page_switch(self.lecture1_Q3_Incorrect)
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=100, y=800)
+                    
 
     def lecture1_Q3_Correct(self, frame):
             image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q3_Correct.png")
@@ -330,6 +348,9 @@ class QuizApp:
                             self.page_switch(self.lecture1_Q4_Incorrect)
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=100, y=800)
+                    
 
     def lecture1_Q4_Correct(self, frame):
             image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q4_Correct.png")
@@ -391,6 +412,9 @@ class QuizApp:
                             self.page_switch(self.lecture1_Q5_Incorrect)
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=100, y=800)
+                    
 
     def lecture1_Q5_Correct(self, frame):
             image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q5_Correct.png")
@@ -452,6 +476,9 @@ class QuizApp:
                             self.page_switch(self.lecture1_Q6_Incorrect)
             submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)                 
             submit_button.place(x=200, y=800)
+            quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+            quit_button.place(x=100, y=800)
+                    
 
     def lecture1_Q6_Correct(self, frame):
         image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/lecture1_Q6_Correct.png")
@@ -511,7 +538,9 @@ class QuizApp:
 
         submit_button = tk.Button(frame, text="Submit", font=("Arial", 16, "bold"), command=check_answer)
         submit_button.place(x=200, y=800)
-
+        quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+        quit_button.place(x=100, y=800)
+                    
 
     def lecture1_Q7_Correct(self, frame):
         image = Image.open("/Users/HeereshGaneshan/Documents/VIsual Studio Code/Assignment 2/Assignment New (Old Corrupted)/Lecture1_Q7_Correct.png")
@@ -587,6 +616,11 @@ class QuizApp:
 
         trylater_button = tk.Button(frame, text="Try Again Later", bg="#6b63fe", bd=0, highlightthickness=0, activebackground="#ffffff", relief="flat", command=lambda: self.page_switch(self.main_menu1))
         trylater_button.place(x=170, y=750)
+
+        #Quit Button
+        quit_button = tk.Button(frame, text="Quit", font=("Arial", 16, "bold"), command=self.root.quit)
+        quit_button.place(x=100, y=800)
+                    
 root = tk.Tk()
 app = QuizApp(root)
 root.mainloop()
